@@ -63,6 +63,6 @@ public class Categoria implements Serializable {
     @Override
     public int hashCode() {
         return Objects.hash(idCategoria);
-    }holaaa
+    }holaaa 123477
 
 }
