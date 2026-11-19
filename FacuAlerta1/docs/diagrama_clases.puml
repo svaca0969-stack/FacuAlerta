@@ -1,0 +1,21 @@
+@startuml
+skinparam classAttributeIconSize 0
+class Usuario { #idUsuario:int #nombreUsuario #correo #contrasenaHash #tipoUsuario }
+class Estudiante
+class Trabajador
+class Moderador
+class GestorDeRiesgo
+Usuario <|-- Estudiante
+Usuario <|-- Trabajador
+Usuario <|-- Moderador
+Usuario <|-- GestorDeRiesgo
+class Incidente { -evidencias: Evidencia[] }
+class Categoria
+class Evidencia
+class Notificacion
+class RepositorioCRUD<T> { +crear() +consultar() +editar() +eliminar() }
+Incidente o-- "1" Usuario : agregacion
+Incidente "*" -- "1" Categoria : asociacion
+Incidente *-- "0..*" Evidencia : composicion (arreglo)
+Notificacion "1" -- "1" Incidente : asociacion (objeto)
+@enduml
